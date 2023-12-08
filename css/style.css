@@ -261,8 +261,7 @@ body{
     justify-content: center;
     flex-direction: column;
     padding: 2rem;
-    background-color: rgb(37, 36, 36);
-    border-radius: 0 30px 0 30px;
+    border: 1px solid white;
 }
 #projects .project img{
     width: 250px;
