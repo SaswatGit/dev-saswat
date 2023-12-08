@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Smooch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+:root{
+    --head-font: 'Lilita One', sans-serif;
+    /* --head-font: 'Vina Sans', sans-serif; */
+    --other-font: 'Smooch', cursive;
+    --para-font: 'Space Mono', monospace;
+    --col1: #050012;
+    --col2: #000e12;
+    --text-color: white;
+    --span-color: #ff9900;
+}
+body{
+    width: 100%;
+    height: 100%;
+    cursor: none;
+}
+
+.cursor{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 99;
+    box-shadow: 0 0 20px white;
+}
+
+
+/* navbar */
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    color: var(--span-color);
+}
+
+.head .site-name, .head .menu{
+    padding: 0.5rem 1rem;
+}
+.head .site-name{
+    font-family: var(--head-font);
+}
+.head .menu{
+    font-family: var(--para-font);
+    cursor: pointer;
+    z-index: 3;
+}
+#navbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: black;
+    height: 300px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: all 0.5s;
+}
+.navbar{
+    transform: translateX(100%);
+}
+.nav-active{
+    transform: translateX(0%);
+}
+#navbar a{
+    color: var(--text-color);
+    transition: all 0.5s;
+    text-decoration: none;
+    font-family: var(--para-font);
+}
+#navbar a:hover{
+    color: var(--span-color);
+}
+
+
+#hero{
+    position: relative;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(var(--col1), var(--col2));
+    color: var(--text-color);
+    overflow: hidden;
+}
+#hero .me{
+    overflow: hidden;
+    z-index: 5;
+}
+#hero h1{
+    font-family: var(--head-font);
+    font-size: 8vw;
+}
+#hero p{
+    font-family: var(--other-font);
+    font-size: 4vw;
+}
+#hero span{
+    color: var(--span-color);
+}
+
+
+
+
+
+
+
+#about{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    color: white;
+    background-color: var(--col2);
+    height: 100vh;
+}
+@media screen and (max-width: 900px) {
+    #about{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+#about div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+#about h1{
+    font-size: 3rem;
+    font-family: var(--head-font);
+    z-index: 5;
+}
+#about p{
+    width: 60%;
+    font-family: var(--para-font);
+    text-align: justify;
+}
+
+#skills{
+    width: 100%;
+    height: auto;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(var(--col2), var(--col1));
+    color: white;
+}
+#skills h1{
+    font-size: 4rem;
+    font-family: var(--head-font);
+    position: relative;
+    margin-bottom: 2rem;
+    z-index: 2;
+
+}
+#skills h1::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background-color: var(--span-color);
+    z-index: -1;
+}
+#skills .skill-con{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: var(--para-font);
+    font-size:1.2rem;
+} 
+@media screen and (max-width: 900px) {
+    #skills .skill-con{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+.skill-con ul{
+    padding: 0.5rem;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.skill-con ul::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 80%;
+    width: 1%;
+    background-color: gray;
+    border-radius: 5px;
+}
+.skill-con ul h3{
+    font-size:1.7rem;
+}
+
+
+#projects{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(var(--col1), var(--col2));
+    position: relative;
+}
+#projects .title{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    font-family: var(--head-font);
+    font-size: 4rem;
+    width: 100vw;
+    text-align: center;
+}
+#projects .title span{
+    color: var(--span-color);
+}
+#projects .project-con{
+    width: 300vw;
+    height: 100vh;
+    display: flex;
+}
+#projects .project-con .project{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+}
+#projects .project-con .project .con{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: rgb(37, 36, 36);
+    border-radius: 0 30px 0 30px;
+}
+#projects .project img{
+    width: 250px;
+    border: 1px solid var(--span-color);
+}
+#projects .project h1{
+    font-family: var(--head-font);
+    font-size: 3rem;
+    padding: 2rem 0;
+}
+@media screen and (max-width: 1000px) {
+    #projects .project h1{
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    #projects .project h1{
+        font-size: 1.5rem;
+    }
+}
+#projects .project p{
+    font-family: var(--para-font);
+    width: 90%;
+    text-align: center;
+}
+#projects .project a{
+    color: var(--span-color);
+    text-decoration: none;
+    padding: 0.5rem 0;
+}
+#projects .project .tools{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 2rem;
+}
+#projects .project .tools i{
+    overflow: hidden;
+}
+
+
+footer{
+    width: 100%;
+    color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    background-image: linear-gradient(var(--col2), var(--col1));
+    font-family: var(--para-font);
+}
+
+
+.code{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: orange;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10rem;
+    overflow: visible;
+}
+.code i{
+    text-shadow: 0 0 20px orange;
+    overflow: visible;
+}
+
+
